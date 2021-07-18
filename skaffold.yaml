@@ -5,10 +5,12 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  local:
-    push: false
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: savvy-aileron-320007
   artifacts:
-    - image:  rupeshpanwar/auth
+    - image: us.gcr.io/savvy-aileron-320007/auth
       context: auth
       docker:
         dockerfile: Dockerfile
