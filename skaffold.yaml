@@ -7,15 +7,12 @@ deploy:
 build:
   local:
     push: false
-  # googleCloudBuild:
-  #   projectId: savvy-aileron-320007
   artifacts:
-    # - image: us.gcr.io/savvy-aileron-320007/auth
     - image: rupeshpanwar/auth
       context: auth
       docker:
         dockerfile: Dockerfile
       sync:
-        manual: 
-          - src: 'src/**/*.ts'
+        manual:
+          - src: "src/**/*.ts"
             dest: .
